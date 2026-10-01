@@ -52,6 +52,7 @@
 |---|---|---|---|
 | Current JMS drawings and revision | PDM / Flatter Files released drawings | `04 Drawings\02 Approved for Submittal` | PDM; S:\ |
 | Approved design (governs O&M) | Approved submittal "AS - <proj> - <section>" | Last submittal Rev in `05 Submittals` | S:\ |
+| Blank JMS calc templates (Bio-BELT REV 4.7, Screw Process REV 21) | Shipped in the plugin: `conveyor-calcs/templates/` | Bio-HANDLING Tools share (newer revisions) | Plugin; `\\JMS-CLT-FS01\JMS ENGINEERING\Bio-HANDLING Tools` |
 | Process calcs (HP, torque, capacity, shaft) | `03 Engineering\01 Calculations\<Product>\Process` (current version) | `06 Eng Sub\<Product>\Rev X` | S:\ |
 | Structural calcs / RISA model | `01 Calculations\<Product>\Structural`; RISA file | `02 PE\Reports` (stamped) | S:\ |
 | Hopper/silo design head, capacity, geometry | Hopper/silo GA + design calc | Tank Connection (or other silo vendor) drawings | S:\ `03 Vendor` |

@@ -6,9 +6,9 @@ description: >
   "who checks this", "how does a submittal / fab check / Babtec ticket / change order work at JMS",
   or when any other bio-handling skill needs JMS folder paths, naming rules, product designators,
   drawing standards, workflow steps or roles. Load it alongside submittal-review, drawing-check,
-  design-checks, om-manual, source-documents and sew-drive-selection.
+  design-checks, om-manual, source-documents, sew-drive-selection and conveyor-calcs.
 metadata:
-  version: "0.4.1"
+  version: "0.5.0"
 ---
 
 # JMS Bio-HANDLING Conventions

@@ -8,7 +8,7 @@ description: >
   JMS rules of thumb and lessons learned on screws, shaftless/vertical screws, slide/wedge gates,
   hoppers, live bottoms, silos, belts, motors, gearboxes, anchorage or structural supports.
 metadata:
-  version: "0.4.1"
+  version: "0.5.0"
 ---
 
 # Bio-HANDLING Design Checks
@@ -22,7 +22,7 @@ Review or develop engineering for JMS Bio-HANDLING equipment using JMS standards
    - Screws (shafted, shaftless, inclined, vertical, SCREW-PACTOR) → `references/screw-conveyors.md`
    - Slide/wedge gates and actuators → `references/gates.md`
    - Hoppers, live bottoms, silos, chutes, dust collection, load cells → `references/hoppers-silos.md`
-   - SEW gearboxes, Baldor motors, hazardous areas, sensors → `references/drives-motors.md`. For an actual SEW selection from calc data, use the `sew-drive-selection` skill.
+   - SEW gearboxes, Baldor motors, hazardous areas, sensors → `references/drives-motors.md`. For an actual SEW selection from calc data, use the `sew-drive-selection` skill. To fill a Bio-BELT or screw calc workbook from a spec, use `conveyor-calcs`.
    - RISA models, seismic, anchors, stairs/platforms, belts structural → `references/structural-anchorage.md`
 3. **Check calcs against the current JMS calculator version.** The Bio-SCREW calculator was corrected in Jun 2026 (shaft shear table, lift HP factor 1.3 → 1.7, thrust calcs added). Calcs made with older versions may oversize shafts or understate lift HP. Flag any calc that predates this.
 4. **Run the numbers in code, not by estimate.** Show formulas, inputs with units, and results. Report the governing check and its utilization.

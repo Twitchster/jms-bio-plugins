@@ -34,7 +34,7 @@ Third-party vendors sizing drives must follow these standards.
 - Elevation ≥2,000 ft.
 - Bearing calcs are needed (give axial and overhung loads).
 - Reinforced bearings are considered. A pillow block between the product and the gearbox usually means none are needed.
-- The area is hazardous. SEW max is Class I Div 2; Div 1 → can't use SEW.
+- The area is hazardous. SEW's own motors go only to Class I Div 2, but per ASB (Oct 2026) SEW makes the final motor selection from JMS's datasheet and sources a suitable motor (other vendor if needed). Run the selection anyway and always state the area classification in the SEW request.
 - Grounding rings are spec'd. Not standard; only if spec'd and on a VFD. SEW offers conductive fleece, not Aegis rings (take exception or use another motor).
 - Hollow-shaft bore limits gearbox swaps (KA67 = 1.5"; KA77 min 1.75").
 - SEW datasheets don't say "inverter duty". The variant adds 3 TF sensors and an FKM seal, noted in the quote. SEW letters confirm NEMA MG1 Part 31.

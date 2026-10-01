@@ -7,7 +7,7 @@ description: >
   "what changed in the plugin". It checks the plugin's GitHub repository and, only when
   asked to update, packages the new version for the user to install. It never runs on its own.
 metadata:
-  version: "0.4.1"
+  version: "0.5.0"
 ---
 
 # Plugin Update (manual, on request only)

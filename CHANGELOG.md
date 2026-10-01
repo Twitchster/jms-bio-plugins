@@ -4,6 +4,25 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.5.0 — 2026-10-01 — Amr Banawan
+- **New `conveyor-calcs` skill:** the spec-to-calc workflow agreed in the "Belt conveyor JMS calculations" chat.
+  1. intake
+  2. first fill with batched blocking/non-blocking questions
+  3. Claude-doc review until "confirmed"
+  4. SEW selection
+  5. close-out using Claude's own selection
+  6. deliver the workbook + SEW Product Data PDF
+- **Blank templates included:** Bio-BELT Calculator-Estimate REV 4.7 (.xlsm) and Screw Process REV 21 (.xlsx).
+- **Design-sheet cell maps for both templates,** generated from the template color legend, with worked-example notes from the first runs (CLCWA belt, 25026 SSC-1 screw).
+- **Scripts:**
+  - `inspect_template.py`: revision and input-cell check
+  - `fill_calc.py`: XML-level fill that keeps macros and images; refuses to overwrite formulas; self-verifies
+  - `recalc_readout.py`: LibreOffice recalculation on a throwaway copy
+  - Tested by rebuilding both first-run workbooks from the blanks: every recalculated pass/fail output matched.
+- **Rule changes:**
+  - Area classification no longer blocks the SEW motor selection. SEW sources the final motor, and the classification goes in the SEW notes. It still blocks JMS-selected sensors, switches and enclosures. (ASB)
+  - The SEW deliverable is now SEW's Product Data PDF, not a selection spreadsheet. The PDF download procedure and configurator quirks were added to `sew-drive-selection`. (ASB)
+
 ## 0.4.1 — 2026-10-01 — Amr Banawan
 - Update source set to the public repository `Twitchster/jms-bio-plugins`. Updates need no GitHub account.
 - Restored the hidden files lost in the GitHub web upload, without which the plugin can't be installed:

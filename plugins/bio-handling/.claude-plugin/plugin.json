@@ -1,7 +1,7 @@
 {
   "name": "bio-handling",
-  "version": "0.4.1",
-  "description": "JMS Bio-HANDLING project engineering: submittal and spec review, fab check and vendor drawing review, design checks for screws, gates, live bottoms, hoppers, silos, belts, drives and anchorage, and O&M manual drafting, built on JMS standards and lessons learned; SEW gearmotor selection from calc-sheet data per the JMS SEW standard; asks for the specific source document known to contain any missing information; manual, on-request updates from its public GitHub repository.",
+  "version": "0.5.0",
+  "description": "JMS Bio-HANDLING project engineering: submittal and spec review, fab check and vendor drawing review, design checks for screws, gates, live bottoms, hoppers, silos, belts, drives and anchorage, and O&M manual drafting, built on JMS standards and lessons learned; spec-to-calc workflow for the Bio-BELT and screw conveyor calculation workbooks (templates included); SEW gearmotor selection from calc-sheet data per the JMS SEW standard; asks for the specific source document known to contain any missing information; manual, on-request updates from its public GitHub repository.",
   "author": {
     "name": "Amr Banawan (JMS Bio-HANDLING Project Engineering)"
   },

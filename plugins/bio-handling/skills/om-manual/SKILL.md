@@ -6,7 +6,7 @@ description: >
   "fill out the 01 33 00 closeout forms", "equipment maintenance summary forms", "maintenance
   requirements form", "spare parts list for the O&M", or needs closeout documentation for JMS equipment.
 metadata:
-  version: "0.4.1"
+  version: "0.5.0"
 ---
 
 # O&M Manual Drafting

@@ -8,7 +8,7 @@ description: >
   Bio-LIVEBOTTOM, leveling screw or belt conveyor calculation sheet and wants a JMS-compliant
   gearmotor selection from SEW-EURODRIVE's online DriveConfigurator.
 metadata:
-  version: "0.4.1"
+  version: "0.5.0"
 ---
 
 # SEW Gearmotor Selection from Calculation Sheet Data
@@ -41,11 +41,12 @@ Per the JMS standard, these go to SEW directly. The configurator result, if run 
 - ambient >40 °C/104 °F, or the spec requires a thermal calculation
 - elevation ≥2,000 ft
 - "especially low output speeds" needed
-- hazardous classification of any kind. SEW goes only to Class I Div 2. **Div 1 → an SEW motor can't be used.**
 - grounding: conductive fleece required, or the spec demands Aegis rings (not possible with SEW → exception or other motor)
 - a non-SEW motor needing an adapter
 - bearing calculations required by the spec (give SEW the axial and overhung loads)
 - reinforced-bearing decision (give SEW the thrust-calc value; a pillow block between the product and the gearbox usually means none)
+
+**Area classification does not stop the selection** (ASB, Oct 2026). SEW makes the final motor selection from the datasheet JMS sends, and sources a suitable motor, from another vendor if needed. SEW's own motors only go to Class I Div 2. So run the configurator normally, and **always put the area classification in the notes for SEW**, so they don't quote a standard motor. The classification still blocks the JMS-selected sensors, switches and enclosures; see `conveyor-calcs`.
 
 Also pull the spec items that change options: voltage, thermistors vs thermostats, synthetic oil, sight glass, encapsulated terminal box, IE class, poles, SF/AGMA class, coatings. Use `source-documents` if the spec isn't in hand.
 
@@ -76,7 +77,8 @@ Follow `references/sew-website-procedure.md`, which includes the exact field mec
    - terminal box 0° and cable entry X unless blocked (Bio-BELT conduit box not on the conveyor-frame side)
    - digital interface Without
 5. **Options tab:** set every option per §4 of the standard. The site defaults are **not** JMS-compliant: IP54 and 3020 Traffic red appeared by default and must be changed to **IP66** and **US13 Stainless Steel Gray + OS4**. If an option isn't offered, note it for the quote; don't substitute.
-6. **Summary tab:** record the technical data (type designation, fB, torque, permitted overhung load, oil quantity, current, weight, options). Never click "Add to shopping cart", Forward, Save as template, Request or Order. Downloading a dimension sheet or CAD file needs the user's permission.
+6. **Summary tab:** record the technical data (type designation, fB, torque, permitted overhung load, oil quantity, current, weight, options). Never click "Add to shopping cart", Forward, Save as template, Request or Order.
+7. **Download SEW's Product Data PDF** for the configured unit: Summary → Product data → PDF. Follow "Step 5" in the website procedure. This PDF is the standard deliverable (ASB, Oct 2026). Confirm once per session before the first download. The file is named like `FAZ97DRN100LM4_TH_DH_ProductData_en_US.pdf`. It lands in the user's Downloads folder through the browser; bring it into the chat with the device tools. Other downloads (dimension sheet, CAD) need the user's permission each time.
 
 ## Step 4 — Checks and output
 
@@ -89,17 +91,14 @@ Run the checks in code and report pass/fail:
 - **Spec compliance:** NEMA design letter, SF, thermistors (recommend an exception; otherwise note that a panel relay is needed), grounding, oil type, IE class.
 
 Deliverables:
-1. **Selection summary** (.xlsx by default) with these sections:
-   - Inputs (with calc cell references)
-   - Derived requirements
-   - Candidates table (designation, HP, na, Ma, i, fB, bore)
-   - Selected configuration: every Search/Variants/Options value, each tagged [Spec], [JMS std §4/§5] or [Project]
-   - Checks
-   - Deviations and exceptions
-   - SEW confirmations needed
+1. **SEW's Product Data PDF** for the selected unit (step 3.7). Don't produce a separate SEW-selection spreadsheet (ASB, Oct 2026).
+2. **Values for the calc sheet close-out:**
+   - type designation, i, output rpm, fB, bore
+   - permitted overhung load, oil quantity, net weight
 
-   Name it `PROJ-PRODUCT_SEW-SELECTION_REVX`; it belongs in `03 Engineering\01 Calculations\<Product>\Process`.
-2. **Draft email** to the SEW district sales engineer requesting a formal quote. Include the type designation, the full options list, loads for bearing checks, and the contact-SEW items. Use the JMS subject format and the project CC. Draft only; send only with the user's explicit approval.
+   When run from `conveyor-calcs`, these go into the workbook, commented "from configurator selection — replace with SEW quote value".
+3. **Results in chat or the review doc:** the checks, the candidates considered and why the pick (margin, not just the smallest frame), deviations from the JMS standard with reasons, and what SEW must confirm (axial-load bearing life, spec motor items the configurator can't set, area classification).
+4. **Draft quote email, only if asked.** Send it to the SEW district sales engineer with the type designation, options list, loads and SEW notes, using the JMS subject format and project CC. It's a draft; send only with the user's explicit approval.
 
 ## Rules
 

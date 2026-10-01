@@ -103,3 +103,33 @@ Search: F, DR AC, USA UR 60 Hz, 3 HP, 20 rpm, fB 1.4.
 - The FA77 summary showed permitted overhung load 2,880 lb, lubricant 1.55 gal, 8.4/4.2 A at 230/460 V, 200 lb.
 
 This is an example only; not a recommendation.
+
+## Step 5 — Download the Product Data PDF (standard deliverable)
+
+Verified Oct 1 2026 on FAZ97DRN100LM4/TH/DH. The workspace shell can't reach SEW servers, so everything below runs in the browser page.
+
+1. **Open the documents portal.** On the Summary tab, the "Product data" link tries to open SEW's documents portal in a new tab, which the browser pane blocks. Get the portal URL in-page instead:
+   ```js
+   const r = await fetch('../../../dataservices/DocuTransfer.ashx', {method:'POST',
+     headers:{'Content-Type':'application/json; charset=utf-8'}, body: JSON.stringify({Type:'productdata'})});
+   'https://www.seweurodrive.com/os/dud?g=' + (await r.json()).d
+   ```
+   Open that URL (same tab, or `preview_start`).
+2. **Get the PDF's document id.** On the portal, click `#productdata-pdf-button`; the PDF is generated on request. Poll for up to about 40 s until the button gets an `href` containing `documentid=<id>`. The CSV link uses a different id; don't mix them up.
+3. **Fetch the PDF from inside the page,** using the same-origin path:
+   `/os/docuws/StorageService/api/Download?documentid=<id>&documenttype=technischedatenreport&mimetype=text/pdf`
+   Check that the response starts with `%PDF`.
+4. **Trigger the download.** Build a Blob and an `<a download>` link named `<TYPE>_ProductData_en_US.pdf` (e.g. `FAZ97DRN100LM4_TH_DH_ProductData_en_US.pdf`). The file lands in the user's Downloads folder.
+5. **Bring it into the chat.** Request access to `~/Downloads` with the device tools (one request), stage the file, and send it with SendUserFile.
+   - If the desktop window isn't open, the access prompt can't appear. Tell the user, and suggest they attach the file themselves.
+
+## Configurator quirks seen in practice (Oct 2026)
+- **Two postbacks in quick succession can crash the server session** ("Runtime Error"). Reload the configurator; it resets to defaults (e.g. R97 at 20 HP). Redo the search one postback at a time, waiting for each to finish.
+- **A "Loading data" overlay can cover the form and steal focus.** Wait for it to clear before typing.
+- **The "Frequency inverter operation" checkbox can revert after later updates.** Re-read it before leaving the Search tab; the type designation ending in `/TF` confirms it's on.
+  - The cookie banner can cover the checkbox; tick it via JavaScript rather than clicking the banner, and don't accept the banner.
+- **When the browser pane is hidden, the viewport can be zero-size.** Read and set the form through JavaScript, or ask the user to show the pane.
+- **Ticking inverter operation removes the "Standard" motor oil seal option** (only FKM or Premium Sine Seal types remain). Keep FKM and record it as a deviation.
+- **The results grid may render empty when the pane isn't visible.** The header still shows the auto-selected designation. Show the pane, or read the grid via JavaScript.
+- **The Summary page can mislabel units.** One page showed the lube quantity as 4.95 gal in one place and "18.8 Gallons" in another; 18.8 is liters. Report the corrected value.
+
