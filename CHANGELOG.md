@@ -4,6 +4,9 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.5.1 — 2026-10-01 — Amr Banawan
+- Shortened the plugin description to under 500 characters. No skill changes.
+
 ## 0.5.0 — 2026-10-01 — Amr Banawan
 - **New `conveyor-calcs` skill:** the spec-to-calc workflow agreed in the "Belt conveyor JMS calculations" chat.
   1. intake

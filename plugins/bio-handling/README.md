@@ -42,4 +42,4 @@ Updates are manual. The plugin pulls from the repository named in `update-source
 - Claude does not replace the engineer of record or the stamping engineer. All calcs and letters need PE review.
 - Content is internal to JMS. Don't distribute outside the company.
 
-Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.5.0.
+Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.5.1.
