@@ -1,7 +1,0 @@
-{
-  "repository": "OWNER/jms-bio-plugins",
-  "branch": "main",
-  "plugin_path": "plugins/bio-handling",
-  "changelog_path": "CHANGELOG.md",
-  "note": "Where the plugin-update skill pulls updates from. Updates happen ONLY when a user asks. No credentials belong in this file; each user reaches the private repository through their own GitHub access."
-}
