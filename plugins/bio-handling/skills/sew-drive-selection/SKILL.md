@@ -8,7 +8,7 @@ description: >
   Bio-LIVEBOTTOM, leveling screw or belt conveyor calculation sheet and wants a JMS-compliant
   gearmotor selection from SEW-EURODRIVE's online DriveConfigurator.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # SEW Gearmotor Selection from Calculation Sheet Data

@@ -7,7 +7,7 @@ description: >
   shop drawings", or shares a fab check package, weldment/machined-part drawings, a BOM, or a
   supplier approval drawing (TCC/Martin, Vortex, Samana, Elevated Steel, outsourced hopper fabricators).
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # Drawing and Fab Check

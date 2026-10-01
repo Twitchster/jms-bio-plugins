@@ -1,0 +1,7 @@
+# Require review of plugin changes by the listed people before merge.
+# Replace the placeholders with real GitHub usernames, then enable
+# "Require review from Code Owners" in branch protection for main.
+#
+# Example:
+# /plugins/bio-handling/   @amr-github-username @second-reviewer-username
+# /CHANGELOG.md            @amr-github-username

@@ -1,7 +1,7 @@
 {
-  "repository": "OWNER/jms-bio-plugins",
+  "repository": "Twitchster/jms-bio-plugins",
   "branch": "main",
   "plugin_path": "plugins/bio-handling",
   "changelog_path": "CHANGELOG.md",
-  "note": "Where the plugin-update skill pulls updates from. Updates happen ONLY when a user asks. No credentials belong in this file; each user reaches the private repository through their own GitHub access."
+  "note": "Where the plugin-update skill pulls updates from. Updates happen ONLY when a user asks. The repository is public, so no GitHub account or credentials are needed to pull. Never put credentials in this file."
 }

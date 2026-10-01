@@ -4,6 +4,16 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.4.1 — 2026-10-01 — Amr Banawan
+- Update source set to the public repository `Twitchster/jms-bio-plugins`. Updates need no GitHub account.
+- Restored the hidden files lost in the GitHub web upload, without which the plugin can't be installed:
+  - `.claude-plugin/marketplace.json`
+  - `plugins/bio-handling/.claude-plugin/plugin.json`
+  - `plugins/bio-handling/.mcp.json`
+  - `.github/*`
+  - `.gitignore`
+- Docs updated for a public repository.
+
 ## 0.4.0 — 2026-09-30 — Amr Banawan
 - Added `plugin-update` skill and `update-source.json`.
   - The plugin now knows its private GitHub repository and pulls updates **only when a user asks** ("update the bio-handling plugin").

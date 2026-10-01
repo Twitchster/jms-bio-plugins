@@ -1,6 +1,6 @@
 # jms-bio-plugins
 
-A private repository holding JMS Bio-HANDLING plugins for Claude. Right now it holds one: **bio-handling** (`plugins/bio-handling/`). Its contents:
+A public repository (`Twitchster/jms-bio-plugins`) holding JMS Bio-HANDLING plugins for Claude. Right now it holds one: **bio-handling** (`plugins/bio-handling/`). Its contents:
 
 - submittal and spec review
 - fab and vendor drawing checks
@@ -9,7 +9,7 @@ A private repository holding JMS Bio-HANDLING plugins for Claude. Right now it h
 - source-document requests
 - SEW gearmotor selection
 
-**Keep this repository private.** It contains internal JMS standards, procedures and project lessons.
+**This repository is public.** Anything committed here can be read, indexed and copied by anyone. Don't commit passwords, keys, or documents you aren't cleared to publish.
 
 ## How updates reach people (manual by design)
 
@@ -23,14 +23,10 @@ Nothing updates automatically. A person's plugin changes only when they ask Clau
    - on an update request, validates the repository and hands the person a `.plugin` file
 4. They install it from the file card. It applies to new conversations.
 
-**What each person needs to pull updates:**
-- **Read access to this private repository**, granted by the repository owner.
-- **GitHub connected to their Claude account.** Credentials are never stored in the plugin.
-
-Anyone without access can still get a `.plugin` file from you directly.
+**What each person needs to pull updates:** nothing beyond the installed plugin. The repository is public, so no GitHub account is required. If a person's Claude environment blocks GitHub (some organizations restrict network access), send them the `.plugin` file instead.
 
 **Keep it manual:**
-- **Don't connect this repository to Claude's organization plugin settings with automatic sync on.** If an admin ever connects it there, leave automatic sync off.
+- **Don't connect this repository to Claude's organization plugin settings with automatic sync on.** If an admin ever connects it there, leave automatic sync off. (Organization sync also requires a private repository.)
 - **Don't use Claude's "share plugin" feature for this plugin.** Shared plugins update for recipients automatically.
 - **In Claude Code (terminal),** leave marketplace auto-update off; it's off by default. Users run `/plugin marketplace update jms-bio-plugins` when they choose.
 
@@ -39,7 +35,7 @@ Sources: [Manage plugins for your organization](https://support.claude.com/en/ar
 ## First-time install
 
 - **Desktop app:** install the `.plugin` file built from `plugins/bio-handling/` (any Claude session with access can build it by asking "update the bio-handling plugin" once the plugin is installed; for the very first install, the owner sends the file).
-- **Claude Code:** `/plugin marketplace add <github-owner>/jms-bio-plugins`, then `/plugin install bio-handling@jms-bio-plugins`. Needs a stored git credential (`gh auth login`, then `gh auth setup-git`).
+- **Claude Code:** `/plugin marketplace add Twitchster/jms-bio-plugins`, then `/plugin install bio-handling@jms-bio-plugins`. No credentials are needed for a public repository. Without a GitHub SSH key, set `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` first.
 
 ## Releasing a change
 
@@ -70,8 +66,8 @@ python3 scripts/validate_plugin.py --base origin/main
   - require a pull request before merging, with at least one approval
   - require the status check **validate** to pass
   - optionally, require review from Code Owners (fill in `.github/CODEOWNERS` with real usernames first)
-- **Visibility:** private.
-- **Collaborators:** give read access to each person who should be able to pull updates; write access only to maintainers.
+- **Visibility:** public (by owner decision). Switching to private later requires each updater to have read access and GitHub connected to Claude.
+- **Collaborators:** write access only to maintainers. Reading needs no access because the repository is public.
 
 ## Layout
 

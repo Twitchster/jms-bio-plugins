@@ -12,7 +12,7 @@ A Claude plugin for JMS Bio-HANDLING project engineers. It encodes JMS standards
 | design-checks | Screws, gates, hoppers/live bottoms/silos, drives/motors, RISA/seismic/anchors | "Check this Bio-SCREW calc." "What head load for this slide gate blade?" |
 | om-manual | Draft O&Ms and 01 33 00 closeout forms | "Draft the O&M for the 24057 live bottoms." |
 | sew-drive-selection | Turns calc-sheet drive data into a JMS-compliant SEW gearmotor selection on SEW's online DriveConfigurator (via the browser on your computer), following the JMS SEW Selection standard; outputs a selection summary and a draft quote request | "Select the SEW gearmotor from this Bio-SCREW calc." |
-| plugin-update | Checks the team's private GitHub repository for a newer version and, only when asked, packages it for you to install. Never updates on its own. | "Check for plugin updates." "Update the bio-handling plugin." |
+| plugin-update | Checks the plugin's GitHub repository for a newer version and, only when asked, packages it for you to install. Never updates on its own. | "Check for plugin updates." "Update the bio-handling plugin." |
 | source-documents | When information is missing, asks for the specific file known to contain it (with location, section and what's needed), in one batched request; used by all the skills above | "What file do you need for the motor spec?" |
 
 **Connector:** Microsoft 365 (Outlook, SharePoint, Teams). Each user signs in with their own JMS account. The S:\ drive and Outlook Public Folders are not reachable through it; attach those files directly.
@@ -25,7 +25,7 @@ The rules come from Bio-HANDLING engineering emails, procedures and project less
 
 ## Updates
 
-Updates are manual. The plugin pulls from the private repository named in `update-source.json` only when a user asks ("update the bio-handling plugin"), then hands them a `.plugin` file to install. Every release needs a version bump and a CHANGELOG entry in the repository. To update, users need read access to the repository and GitHub connected to their Claude account.
+Updates are manual. The plugin pulls from the repository named in `update-source.json` only when a user asks ("update the bio-handling plugin"), then hands them a `.plugin` file to install. Every release needs a version bump and a CHANGELOG entry in the repository. The repository is public, so no GitHub account is needed to update.
 
 ## Maintaining it
 
@@ -41,4 +41,4 @@ Updates are manual. The plugin pulls from the private repository named in `updat
 - Claude does not replace the engineer of record or the stamping engineer. All calcs and letters need PE review.
 - Content is internal to JMS. Don't distribute outside the company.
 
-Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.4.0.
+Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.4.1.

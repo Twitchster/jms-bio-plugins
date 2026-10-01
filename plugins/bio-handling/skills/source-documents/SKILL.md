@@ -8,7 +8,7 @@ description: >
   "which document has the motor spec", "what should I send you". Every other bio-handling skill
   (submittal-review, drawing-check, design-checks, om-manual) uses it before asking the user for information.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # Asking for the Right Source Document

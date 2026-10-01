@@ -8,7 +8,7 @@ description: >
   drawing standards, workflow steps or roles. Load it alongside submittal-review, drawing-check,
   design-checks, om-manual, source-documents and sew-drive-selection.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # JMS Bio-HANDLING Conventions

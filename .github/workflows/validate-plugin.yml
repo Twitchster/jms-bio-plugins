@@ -1,0 +1,35 @@
+name: Validate plugin
+
+# Runs on every pull request to main and on pushes to main.
+# On PRs it also blocks merging when plugin files changed without a version bump
+# and changelog entry. Without a bump, Claude never delivers the update.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Structure checks
+        if: github.event_name != 'pull_request'
+        run: python3 scripts/validate_plugin.py
+
+      - name: Structure checks + version bump vs base branch
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/validate_plugin.py --base origin/${{ github.base_ref }}

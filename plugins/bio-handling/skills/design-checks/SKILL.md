@@ -8,7 +8,7 @@ description: >
   JMS rules of thumb and lessons learned on screws, shaftless/vertical screws, slide/wedge gates,
   hoppers, live bottoms, silos, belts, motors, gearboxes, anchorage or structural supports.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # Bio-HANDLING Design Checks

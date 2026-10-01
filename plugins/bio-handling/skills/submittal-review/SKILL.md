@@ -7,7 +7,7 @@ description: >
   "draft Section 1", or shares an equipment specification (e.g., 41 12 13, 46 01 01, 14500, 41 52 19)
   or an engineer-of-record comment set for Bio-SCREW, Bio-BELT, Bio-HOPPER, Bio-SILO, gates or chutes.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # Submittal and Spec Review

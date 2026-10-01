@@ -1,0 +1,14 @@
+{
+  "name": "jms-bio-plugins",
+  "description": "JMS Bio-HANDLING engineering plugins for Claude (internal to Jim Myers & Sons)",
+  "owner": {
+    "name": "JMS Bio-HANDLING Project Engineering"
+  },
+  "plugins": [
+    {
+      "name": "bio-handling",
+      "source": "./plugins/bio-handling",
+      "description": "Submittal/spec review, fab and vendor drawing checks, design checks, O&M drafting, source-document requests and SEW gearmotor selection to JMS standards"
+    }
+  ]
+}
