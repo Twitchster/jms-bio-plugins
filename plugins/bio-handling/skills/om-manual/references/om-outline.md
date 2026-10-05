@@ -1,6 +1,6 @@
-# Default O&M Outline (use only when no prior JMS O&M template is available)
+# Default O&M Outline (only for products without a JMS starting-point template and no prior JMS O&M)
 
-This outline follows common wastewater-equipment O&M practice and typical 01 78 23 / 01 33 00 requirements. It is **not** a JMS-issued template. Replace it with the team's standard once one is identified, and check the project spec for required sections.
+This outline follows common wastewater-equipment O&M practice and typical 01 78 23 / 01 33 00 requirements. It is **not** a JMS-issued template. Bio-BELT, Bio-SCREW, Bio-HOPPER, Bio-GATE and Bio-DIVERTER have JMS templates in `templates/`; use those. Check the project spec for required sections.
 
 0. Cover page: project name and number, owner/plant, contractor, EoR, spec section, equipment, JMS contact, revision block, Prepared By (PE initials), date
 1. Open Items (draft only; remove before submittal)

@@ -4,6 +4,19 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.6.0 — 2026-10-05 — Amr Banawan
+- **`om-manual` now drafts from the JMS O&M starting-point templates**, shipped in `om-manual/templates/`: Bio-BELT (Rev 1), Bio-SCREW shafted (Rev 0), Bio-SCREW shaftless (Rev 1), Bio-HOPPER (Rev 0), Bio-GATE (Rev 0), Bio-DIVERTER (Rev 0).
+- **New `references/om-required-documents.md`:** what Claude asks for when asked to create an O&M, built from the templates' drafter notes:
+  - Part A: documents every product needs (approved submittal, numerical-revision GA/SA/FA, BOM, spec/Div 01, project identity, calcs, vendor installation and lubrication data, anchor instructions, field service, warranty, controls)
+  - Part B: product-specific documents, each marked blocking or non-blocking, with its "only if" condition
+  - Part C: SEW data (quote for mounting position and oil, catalog mounting diagram, closing-plug PDF, current SEW manual for plug torque)
+  - the configuration facts per product that select template options
+- **New `references/om-template-rules.md`:** template conventions (highlight = fill-in, brackets = options, comments = drafter notes), the fill procedure, the SEW lubrication block, bearing defaults and per-template quirks (Diverter inputs page, Gate storage, Hopper/Gate split).
+- **New `scripts/om_template_tool.py`:** `inspect` (drafter notes with section and anchor, fill-ins, options, content controls), `prepare` (strip template comments, set field update on open), `check` (leftover notes, highlights, placeholders, broken references).
+- **Workflow change:** Claude presents the required-documents list first, confirms the configuration it read from the documents, then fills the template. Open items go in Word comments.
+- **Rules now explicit:** the approved submittal governs, except the spare-parts list, where the GA table is the latest (raise differences with the PM); drawings must be at a numerical revision; a Bio-GATE always gets its own O&M.
+- `om-outline.md` is now only the fallback for products without a template. Updated the source map and README.
+
 ## 0.5.1 — 2026-10-01 — Amr Banawan
 - Shortened the plugin description to under 500 characters. No skill changes.
 

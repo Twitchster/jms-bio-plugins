@@ -52,6 +52,9 @@
 |---|---|---|---|
 | Current JMS drawings and revision | PDM / Flatter Files released drawings | `04 Drawings\02 Approved for Submittal` | PDM; S:\ |
 | Approved design (governs O&M) | Approved submittal "AS - <proj> - <section>" | Last submittal Rev in `05 Submittals` | S:\ |
+| JMS O&M starting-point templates (Bio-BELT, Bio-SCREW shafted/shaftless, Bio-HOPPER, Bio-GATE, Bio-DIVERTER) | Shipped in the plugin: `om-manual/templates/` | Technical Writing SharePoint (newer revisions) | Plugin; TW SharePoint |
+| O&M spare parts list | GA drawing spare-parts table (latest) | Approved submittal list; PM if they differ | Flatter Files / PDM |
+| O&M Appendix B drawings | Latest GA, SA, FA sheets at a numerical revision | Ask Design if still at an alphabetical revision | Flatter Files / PDM |
 | Blank JMS calc templates (Bio-BELT REV 4.7, Screw Process REV 21) | Shipped in the plugin: `conveyor-calcs/templates/` | Bio-HANDLING Tools share (newer revisions) | Plugin; `\\JMS-CLT-FS01\JMS ENGINEERING\Bio-HANDLING Tools` |
 | Process calcs (HP, torque, capacity, shaft) | `03 Engineering\01 Calculations\<Product>\Process` (current version) | `06 Eng Sub\<Product>\Rev X` | S:\ |
 | Structural calcs / RISA model | `01 Calculations\<Product>\Structural`; RISA file | `02 PE\Reports` (stamped) | S:\ |
@@ -70,6 +73,8 @@
 | Actuators (model, stem, open time, wiring) | Rotork / AFP quote + datasheet | Vendor rep | `03 Vendor` | `<proj> Rotork`, `AFP` |
 | Bearings, seals, couplings | Vendor datasheets (Dodge, Cinch-Seal, etc.) | Vendor rep | `03 Vendor` | vendor name + `<proj>` |
 | Lubrication and maintenance intervals | Vendor O&M manuals (SEW, Baldor, TCC, actuator, sensor) | Vendor website manual (ask the user to download) | `03 Vendor\...\Technical` | `<proj> O&M` + vendor |
+| O&M vendor installation instructions (pull cords, zero-speed and alignment switches, load discs, level sensors, actuators, anchors) | Manufacturer installation manual (not just the cut sheet) | TW SharePoint `1 - O&M Creation Reference > Manufacturer Supplemental Info` / MFR Cat Cuts folder; `Supplier Data` on S:\ | TW SharePoint; S:\ | model number + `installation` |
+| SEW O&M data (mounting position diagram, closing plug thread, plug torque) | SEW quote (position, oil qty) + current SEW catalog and operating instructions + "FOR REFERENCE - SEW Closing Plugs.pdf" | SEW website (download with permission) | `03 Vendor\<Product>\Quotes`; JMS O&M reference files | `SEW closing plugs`, unit type |
 | Instruments/sensors (rating, cable length, wiring) | Instrument datasheet in submittal | Vendor rep | `03 Vendor`; submittal | model number |
 | Load cells, calibration | Kistler Morse data + calibration report | Field service report | `03 Vendor`; email | `<proj> Kistler`, `calibration` |
 | Stairs/platform design | Fabricator stamped calc package + shop drawings | EoR shop-drawing review comments | `03 Vendor`; email | `<proj> stair`, fabricator name |
