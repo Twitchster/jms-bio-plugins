@@ -11,6 +11,7 @@ A Claude plugin for JMS Bio-HANDLING project engineers. It encodes JMS standards
 | drawing-check | Fab check packages and vendor approval drawings | "Do my fab check on this package." "Is this Vortex gate approval drawing OK?" |
 | design-checks | Screws, gates, hoppers/live bottoms/silos, drives/motors, RISA/seismic/anchors | "Check this Bio-SCREW calc." "What head load for this slide gate blade?" |
 | om-manual | Lists the documents needed, then drafts the O&M from the JMS starting-point templates (Bio-BELT, Bio-SCREW shafted/shaftless, Bio-HOPPER, Bio-GATE, Bio-DIVERTER; templates included); 01 33 00 closeout forms | "Create the O&M for the 25026 shaftless screws." "What do you need for the hopper O&M?" |
+| cutsheet-markup | Reads the spec and calcs, lists the purchased components, selects spec-compliant options from the Equipment List PDFS library (OneDrive), and saves one marked-up PDF per component plus a selection log to `Projects\<project>`. Needs the computer linked. | "Build the cat cuts for 25026." |
 | conveyor-calcs | Spec → JMS Bio-BELT (REV 4.7) or Screw Process (REV 21) calc workbook: batched questions, Claude-doc review, SEW selection, close-out; delivers the filled workbook + SEW Product Data PDF. Blank templates included. | "Fill out the belt conveyor calc from this spec." |
 | sew-drive-selection | Turns calc-sheet drive data into a JMS-compliant SEW gearmotor selection on SEW's online DriveConfigurator (via the browser on your computer), following the JMS SEW Selection standard; outputs a selection summary and a draft quote request | "Select the SEW gearmotor from this Bio-SCREW calc." |
 | plugin-update | Checks the plugin's GitHub repository for a newer version and, only when asked, packages it for you to install. Never updates on its own. | "Check for plugin updates." "Update the bio-handling plugin." |
@@ -35,6 +36,7 @@ Updates are manual. The plugin pulls from the repository named in `update-source
 - **Source map:** add rows to `source-documents/references/source-map.md` whenever the team learns where a piece of information reliably lives. Spec section numbers there are typical examples, not fixed.
 - **SEW standard:** `sew-drive-selection/references/jms-sew-selection-procedure.md` transcribes the Rev 0 (unapproved) JMS SEW standard. Replace it when an approved revision is issued. The website steps were verified against DriveConfigurator Release 26.7 (Sep 2026); SEW may change the site.
 - **Calculator cell maps:** once a calculator's cells are confirmed, add them to `sew-drive-selection/references/calc-field-map.md`.
+- **Equipment PDF library:** the cat-cut workflow depends on ASB's shared OneDrive folder `Equipment List PDFS`. Add new data sheets clean (no project markups), never overwrite, and keep `_Library Index.xlsx` current. Update `cutsheet-markup/references/library.md` after library changes.
 - **O&M templates:** when Technical Writing revises a starting point, replace the file in `om-manual/templates/`, re-run `scripts/om_template_tool.py inspect` on it, and update `om-required-documents.md` and `om-template-rules.md` for any changed drafter notes. The generic `om-outline.md` is only for products without a template.
 
 ## Limits
@@ -42,4 +44,4 @@ Updates are manual. The plugin pulls from the repository named in `update-source
 - Claude does not replace the engineer of record or the stamping engineer. All calcs and letters need PE review.
 - Content is internal to JMS. Don't distribute outside the company.
 
-Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.6.0.
+Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.7.0.

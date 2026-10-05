@@ -4,6 +4,18 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.7.0 — 2026-10-05 — Amr Banawan
+- **New `cutsheet-markup` skill (v1, not yet run on a live project):** submittal cat cuts for purchased components.
+  - **What it does:** reads the spec and calcs, lists the components (spec-required / calc-driven / JMS standard), and selects spec-compliant options from the shared OneDrive library `Equipment List PDFS`.
+  - **Outputs:** one marked-up PDF per component (`<Project Number>-<Equipment Name>.pdf`) plus `<Project Number>-Selection Log.xlsx`, saved to `Equipment List PDFS\Projects\<project number>\`.
+  - **Workflow:** PE confirms the list → missing data sheets list right away → compliance table → deviation decisions (accept / RFI / exception) → independent check → PE reviews the PDFs → save → new data sheets go into the library clean.
+- **JMS markup style recorded:** Bluebeam-type rectangle, red 1 pt border, orange fill at 30 %, PE username as author, around the selected row; a column box for cell selections. Labels only when the project requires them. Cover sheet with equipment name and tags.
+- **Library rule:** library files are never edited. 38 carry markups from earlier projects, so every working copy is stripped before marking. New data sheets are added clean, never overwritten (older editions go to `Archive`).
+- **New scripts:**
+  - `cutsheet_markup.py`: `audit`, `find` (whole-token matching, so RS-5X ≠ RS-5XL), `rows`, `packet` (strip / mark / cover sheet / merge with bookmarks), `render`
+  - `selection_log.py`: writes the log workbook
+- **New references:** `library.md` (structure, conventions, old-markup list, pages without text, additions log, worked examples), `selection-log.md`. Updated the source map and README.
+
 ## 0.6.0 — 2026-10-05 — Amr Banawan
 - **`om-manual` now drafts from the JMS O&M starting-point templates**, shipped in `om-manual/templates/`: Bio-BELT (Rev 1), Bio-SCREW shafted (Rev 0), Bio-SCREW shaftless (Rev 1), Bio-HOPPER (Rev 0), Bio-GATE (Rev 0), Bio-DIVERTER (Rev 0).
 - **New `references/om-required-documents.md`:** what Claude asks for when asked to create an O&M, built from the templates' drafter notes:

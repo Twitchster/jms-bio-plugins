@@ -1,7 +1,7 @@
 {
   "name": "bio-handling",
-  "version": "0.6.0",
-  "description": "JMS Bio-HANDLING project engineering: spec review and submittal responses, fab and vendor drawing checks, design checks for screws, belts, gates, hoppers, silos, drives and anchorage, O&M drafting from JMS templates with per-product document lists, Bio-BELT and screw calc workbooks filled from project specs (templates included), and SEW gearmotor selection to JMS standards. Asks for the specific document that holds any missing data. Updates only on request from GitHub.",
+  "version": "0.7.0",
+  "description": "JMS Bio-HANDLING project engineering: spec review and submittal responses, fab and vendor drawing checks, design checks for screws, belts, gates, hoppers, silos, drives and anchorage, O&M drafting from JMS templates, submittal cat cuts marked up from the JMS PDF library, Bio-BELT and screw calc workbooks from project specs (templates included), and SEW gearmotor selection to JMS standards. Asks for the specific document that holds any missing data. Updates only on request from GitHub.",
   "author": {
     "name": "Amr Banawan (JMS Bio-HANDLING Project Engineering)"
   },
