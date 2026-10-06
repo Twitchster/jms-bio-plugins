@@ -4,6 +4,10 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.7.1 — 2026-10-06 — Amr Banawan
+- Fixed: installing 0.7.0 failed with "description cannot contain XML tags". The `cutsheet-markup` skill description contained `<project>`; it now reads "this project". No workflow changes.
+- The repository validator now rejects `<` or `>` in skill and plugin descriptions (and skill descriptions over 1024 characters), so this can't ship again. `claude plugin validate` doesn't catch it; the Claude app does at install.
+
 ## 0.7.0 — 2026-10-05 — Amr Banawan
 - **New `cutsheet-markup` skill (v1, not yet run on a live project):** submittal cat cuts for purchased components.
   - **What it does:** reads the spec and calcs, lists the components (spec-required / calc-driven / JMS standard), and selects spec-compliant options from the shared OneDrive library `Equipment List PDFS`.

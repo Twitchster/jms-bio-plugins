@@ -13,7 +13,8 @@ Checks:
   - each plugin: .claude-plugin/plugin.json valid JSON; name equals the entry name;
     semver version; no top-level bin/ (claude.ai org sync rejects it).
   - each skill: SKILL.md with YAML frontmatter; name equals the folder name;
-    description present; every references/... or scripts/... path mentioned
+    description present, under 1024 characters and without < or > (Claude rejects
+    XML-like tags); every references/... or scripts/... path mentioned
     in the skill exists. A path prefixed by another skill's name is a
     cross-skill reference and is checked there.
   - .mcp.json (if present) is valid JSON; update-source.json (if present) names owner/repo and holds no token.
@@ -67,6 +68,11 @@ def check_skill(skill_dir, all_skill_names):
         err(f"{rel}: frontmatter name must be '{name}'")
     if not re.search(r"^description:", fm, re.M):
         err(f"{rel}: frontmatter description missing")
+    desc = re.search(r"^description:(.*?)(?=^\S|\Z)", fm, re.M | re.S)
+    if desc and re.search(r"[<>]", desc.group(1).replace(">\n", "\n", 1).lstrip().lstrip(">")):
+        err(f"{rel}: description cannot contain < or > (Claude rejects XML-like tags such as <project>)")
+    if desc and len(" ".join(desc.group(1).split())) > 1024:
+        err(f"{rel}: description longer than 1024 characters")
     for ref in set(re.findall(r"(?:references|scripts)/[\w.\-]+\.(?:md|py|json|sh)", text)):
         if os.path.exists(os.path.join(skill_dir, ref)):
             continue
@@ -96,6 +102,10 @@ def check_plugin(entry):
         return None
     if manifest.get("name") != pname:
         err(f"{src}/.claude-plugin/plugin.json: name '{manifest.get('name')}' must equal entry name '{pname}'")
+    if re.search(r"[<>]", manifest.get("description", "")):
+        err(f"{src}/.claude-plugin/plugin.json: description cannot contain < or >")
+    if len(manifest.get("description", "")) > 500:
+        err(f"{src}/.claude-plugin/plugin.json: description over 500 characters (team limit)")
     if not semver(manifest.get("version")):
         err(f"{src}/.claude-plugin/plugin.json: version must be MAJOR.MINOR.PATCH")
     if os.path.isdir(os.path.join(pdir, "bin")):

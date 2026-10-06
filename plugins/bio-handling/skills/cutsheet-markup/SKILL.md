@@ -3,10 +3,10 @@ name: cutsheet-markup
 description: >
   This skill should be used when a JMS Bio-HANDLING engineer asks to "mark up the cut sheets",
   "build the cat cuts for the submittal", "select the purchased components from the spec",
-  "put together the component cut sheets / catalog cuts for <project>", "which purchased parts does
+  "put together the component cut sheets or catalog cuts for this project", "which purchased parts does
   this spec need", or shares a project spec and calc sheets for submittal catalog cuts.
 metadata:
-  version: "0.7.0"
+  version: "0.7.1"
 ---
 
 # Submittal Cat Cuts: purchased-component selection and markup
