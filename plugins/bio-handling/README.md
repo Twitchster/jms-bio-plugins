@@ -37,6 +37,7 @@ Updates are manual. The plugin pulls from the repository named in `update-source
 - **SEW standard:** `sew-drive-selection/references/jms-sew-selection-procedure.md` transcribes the Rev 0 (unapproved) JMS SEW standard. Replace it when an approved revision is issued. The website steps were verified against DriveConfigurator Release 26.7 (Sep 2026); SEW may change the site.
 - **Calculator cell maps:** once a calculator's cells are confirmed, add them to `sew-drive-selection/references/calc-field-map.md`.
 - **Equipment PDF library:** the cat-cut workflow depends on ASB's shared OneDrive folder `Equipment List PDFS`. Add new data sheets clean (no project markups), never overwrite, and keep `_Library Index.xlsx` current. Update `cutsheet-markup/references/library.md` after library changes.
+- **SEW reference data:** `om-manual/references/sew-om-reference.md` summarizes SEW manual 27801357/EN 02/2023, and `om-manual/sew-reference/` holds the Appendix A inserts. When SEW issues a new edition, re-verify the values and replace the inserts.
 - **O&M templates:** when Technical Writing revises a starting point, replace the file in `om-manual/templates/`, re-run `scripts/om_template_tool.py inspect` on it, and update `om-required-documents.md` and `om-template-rules.md` for any changed drafter notes. The generic `om-outline.md` is only for products without a template.
 
 ## Limits
@@ -44,4 +45,4 @@ Updates are manual. The plugin pulls from the repository named in `update-source
 - Claude does not replace the engineer of record or the stamping engineer. All calcs and letters need PE review.
 - Content is internal to JMS. Don't distribute outside the company.
 
-Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.7.0.
+Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.7.2.

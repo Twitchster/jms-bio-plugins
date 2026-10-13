@@ -20,7 +20,7 @@ Take the drive requirements from a JMS calculation sheet, apply the **JMS SEW Ge
 2. `references/jms-sew-selection-procedure.md` (the JMS standard: every option, product-type gearbox choice, contact-SEW triggers). Note that it is Rev 0 and not yet approved.
 3. JMS lessons in `design-checks` → `references/drives-motors.md`.
 
-Load `jms-bio-conventions` for naming and folders. Use `source-documents` for anything missing.
+Load `jms-bio-conventions` for naming and folders. Use `source-documents` for anything missing. SEW maintenance and lubrication data (closing plugs, plug torques, oil types, service intervals, TorqLOC insert): `om-manual` → `references/sew-om-reference.md`.
 
 **Scope:** this is a catalog pre-selection, not an engineered quote. SEW's quote and order confirmation govern. The skill never orders, requests a quote or adds anything to a cart on the SEW site.
 

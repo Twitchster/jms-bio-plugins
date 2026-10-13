@@ -88,6 +88,15 @@ Actuator (Gate_Plow_Diverter), Anchors, Bearing (Hanger) Automatic Lubricators, 
 - `Load Cell/Kistler Morse/Load Cell - Kistler Morse Installation Manual.pdf` (4 of 4 pages)
 - `Belt Splice Kits/Flexco/Selection Guide/How_to_order_super_screw_splice.pdf` (2 of 2 pages)
 
+## SEW reference folder
+`SEW reference Information for O&M creation` (added 2026-10-13) holds:
+- the SEW gear-unit manual (02/2023)
+- the closing-plug and torque sheet
+- the Appendix A inserts (standard and TorqLOC)
+- the oil-types list
+
+They're for O&Ms, not submittal packets. Copies and an extract ship with the plugin: `om-manual` → `references/sew-om-reference.md` and `sew-reference/`.
+
 ## Additions log
 - 2026-10-05: `E-Stop/Conveyor Components/RS Model/E-Stop - Conveyor Components Model RS - CAT CUT (1-page 2025).pdf`. This is the newer one-page edition used on a real submittal, with the project markup removed. The older two-page file is still there.
 

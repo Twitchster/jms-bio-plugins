@@ -4,6 +4,26 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.7.2 — 2026-10-13 — Amr Banawan
+- **SEW reference data now ships with the plugin** for O&Ms, from ASB's library folder `SEW reference Information for O&M creation`.
+- **New `om-manual/references/sew-om-reference.md`,** extracted from SEW manual 27801357/EN, edition 02/2023:
+  - closing-plug thread by gear unit size, with plug torques in Nm and lb-ft
+  - oil brand lists for mineral CLP VG 220 and food-grade CLP HC NSF H1 VG 460, plus bearing greases and oil-seal temperature limits
+  - inspection and oil-change intervals (3,000 h / 6 months checks; mineral oil changed within 3 years, synthetic within 5) and units lubricated for life
+  - oil-level procedure by gear unit type
+  - extended storage, troubleshooting, and footed-mounting and bolt data
+  - fill quantities are deliberately not tabulated: the quote/nameplate governs
+- **New `om-manual/sew-reference/`:**
+  - the Appendix A inserts: "INSERT IF SEW IS USED" (always with SEW) and "INSERT IF SEW WITH TORQLOC IS USED" (TorqLOC hollow shaft)
+  - the closing-plug and torque sheet
+  - the oil-types list
+- **O&M rule changes:**
+  - the SEW Appendix A inserts are now added by default
+  - closing plug and torque come from the shipped table
+  - the lubrication section lists the oil brands for the quoted oil type
+  - required documents C3/C4 are no longer requested from the user (still check for a newer SEW edition); new C8 for the inserts
+- Updated `sew-drive-selection`, the source map, the library reference and the README to point to the new data.
+
 ## 0.7.1 — 2026-10-06 — Amr Banawan
 - Fixed: installing 0.7.0 failed with "description cannot contain XML tags". The `cutsheet-markup` skill description contained `<project>`; it now reads "this project". No workflow changes.
 - The repository validator now rejects `<` or `>` in skill and plugin descriptions (and skill descriptions over 1024 characters), so this can't ship again. `claude plugin validate` doesn't catch it; the Claude app does at install.

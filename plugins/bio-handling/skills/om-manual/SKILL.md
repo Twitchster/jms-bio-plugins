@@ -7,7 +7,7 @@ description: >
   out the 01 33 00 closeout forms", "equipment maintenance summary forms", "spare parts list for
   the O&M", or needs closeout documentation for JMS equipment.
 metadata:
-  version: "0.6.0"
+  version: "0.7.2"
 ---
 
 # O&M Manual Drafting
@@ -78,5 +78,7 @@ Cross-check every tag, model number, lubricant, quantity, interval and torque ag
 ## References
 - `references/om-required-documents.md`: documents to ask for, by product, and the configuration facts
 - `references/om-template-rules.md`: template conventions, fill procedure, SEW lubrication block, per-template notes
+- `references/sew-om-reference.md`: SEW data for O&Ms: closing plugs and plug torques (Nm and lb-ft), oil brand lists, bearing greases, maintenance and oil-change intervals, oil-level procedure, extended storage, troubleshooting, mounting data
+- `sew-reference/`: SEW Appendix A inserts (standard and TorqLOC), the closing-plug and torque sheet, and the oil-types list
 - `references/om-outline.md`: generic fallback outline for products without a template
 - `scripts/om_template_tool.py`: `inspect`, `prepare`, `check`

@@ -44,13 +44,15 @@ How the six templates in `templates/` work and how to fill them so the result ma
 
 ## SEW lubrication block (belt, screws, hopper)
 
-Template text was taken from the SEW manual released 02/2023. Use the current manual if there is a newer one.
+Template text was taken from the SEW manual released 02/2023. **All the SEW data below is in `references/sew-om-reference.md`** (closing plugs, torques in Nm and lb-ft, oil brand lists, intervals, storage, troubleshooting). Use the current manual if there is a newer one.
+
+0. **Appendix A inserts:** add `sew-reference/INSERT IF SEW IS USED ….pdf` whenever an SEW unit is supplied, and `sew-reference/INSERT IF SEW WITH TORQLOC IS USED ….pdf` when the unit has a TorqLOC hollow shaft (..T in the type designation).
 
 1. **Mounting position** from the SEW quote. Put the current SEW catalog diagram for that position under the legend, replacing "[INSERT PIC OF MOUNTING POSITION FROM SEW MANUAL]", and write the position in the text.
 2. **Oil quantity** from the SEW quote (per unit; hopper live bottom and leveling screws may differ).
-3. **Oil type:** keep the template text that tells the user to use the oil on the nameplate. SEW advises against mixing brands, even of the same oil type; an unlisted oil is SEW brand, and switching brands needs a flush.
-4. **Closing plug thread size** from "FOR REFERENCE - SEW Closing Plugs.pdf" using the unit's model. Mark that row in the template table with a red box.
-5. **Plug tightening torque** for that thread from the current SEW manual table ("tightening torques for oil level plugs, oil drain plugs ..."), written as "xx lb-ft (xx Nm)". 1 N·m = 0.7376 lb-ft; round sensibly and compute it in code.
+3. **Oil type:** list the recommended brands for the quoted oil type from `sew-om-reference.md` (mineral CLP VG 220, or synthetic food-grade CLP HC NSF H1 VG 460; any other type: use the manual's lubricant table). Keep the template text that tells the user to use the oil on the nameplate. SEW advises against mixing brands, even of the same oil type; an unlisted oil is SEW brand, and switching brands needs a flush.
+4. **Closing plug thread size** from the table in `sew-om-reference.md` (source: `sew-reference/FOR REFERENCE - SEW Closing Plugs and Tightening Torques (lb-ft).pdf`) using the unit's size. Mark that row in the template table with a red box.
+5. **Plug tightening torque** for that thread from the same table (SEW manual 4.3.3), written as "xx lb-ft (xx Nm)", e.g. M22x1.5 → "44 lb-ft (60 Nm)". 1 N·m = 0.7376 lb-ft.
 6. **Motor bearings:** keep "The motor bearings are sealed for life ..." only for an SEW or explosion-proof motor. For SEW, confirm the quote notes the bearing shield removed / oil added. If the note is missing, flag it for the drives contacts named in the template (Philip and Andy).
 7. **Motor regreasing rows** only for a non-SEW, non-explosion-proof motor (check the Baldor frame for XP plus Class II Div 1; VECP is not XP). Fill interval, quantity and grease from the motor maker's data in App A.
 8. **Break-in oil change** (about 500 h) only if Engineering asks for it.
