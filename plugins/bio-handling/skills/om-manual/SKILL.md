@@ -7,7 +7,7 @@ description: >
   out the 01 33 00 closeout forms", "equipment maintenance summary forms", "spare parts list for
   the O&M", or needs closeout documentation for JMS equipment.
 metadata:
-  version: "0.7.2"
+  version: "0.7.3"
 ---
 
 # O&M Manual Drafting
@@ -39,6 +39,8 @@ When the user asks for an O&M, **first** work out which template(s) apply (ask i
 - the product's configuration facts, with a note that you'll read them from the drawings, BOM and submittal and confirm them before drafting
 
 Before asking, look for what's already reachable: the conversation, attached files, the user's connected folders, and SharePoint/Outlook through the Microsoft 365 connector. Ask only for what's still missing.
+
+**Project context first (`source-documents` step 2):** before asking for anything, search the user's Outlook email for the project number and name, the Equipment List PDFS library for every cut sheet, SharePoint, and Read.AI meeting transcripts if connected. If Read.AI isn't connected, tell the user once that Read.AI can be connected in Claude so its meeting transcripts and summaries can be used. Vendor O&M manuals and cut sheets come from the library before they're requested.
 
 ### 2. Read the documents and settle the configuration
 - Read the approved submittal, drawings (including notes and tables) and BOM fully.

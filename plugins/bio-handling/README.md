@@ -17,7 +17,9 @@ A Claude plugin for JMS Bio-HANDLING project engineers. It encodes JMS standards
 | plugin-update | Checks the plugin's GitHub repository for a newer version and, only when asked, packages it for you to install. Never updates on its own. | "Check for plugin updates." "Update the bio-handling plugin." |
 | source-documents | When information is missing, asks for the specific file known to contain it (with location, section and what's needed), in one batched request; used by all the skills above | "What file do you need for the motor spec?" |
 
-**Connector:** Microsoft 365 (Outlook, SharePoint, Teams). Each user signs in with their own JMS account. The S:\ drive and Outlook Public Folders are not reachable through it; attach those files directly.
+**Connector:** Microsoft 365 (Outlook, SharePoint, Teams). Each user signs in with their own JMS account. **Optional: Read.AI.** Connect it in Claude's connectors so the skills can use your meeting transcripts and summaries as project sources.
+
+**Where Claude looks before asking you for anything:** your Outlook email (project number and name), the Equipment List PDFS library for any cut sheet or vendor data, SharePoint, and Read.AI transcripts if connected. It asks only for what it can't find, and says what it searched. The S:\ drive and Outlook Public Folders are not reachable through it; attach those files directly.
 
 No agents or hooks.
 
@@ -27,7 +29,7 @@ The rules come from Bio-HANDLING engineering emails, procedures and project less
 
 ## Updates
 
-Updates are manual. The plugin pulls from the repository named in `update-source.json` only when a user asks ("update the bio-handling plugin"), then hands them a `.plugin` file to install. Every release needs a version bump and a CHANGELOG entry in the repository. The repository is public, so no GitHub account is needed to update.
+Updates are manual. The plugin pulls from the repository named in `update-source.json` only when a user asks ("update the bio-handling plugin"), then hands them a `.plugin` file to install. Every release needs a version bump, a CHANGELOG entry in the repository, and a plain-language note in `WHATS-NEW.md` (shipped in the plugin and shown when someone updates). The repository is public, so no GitHub account is needed to update.
 
 ## Maintaining it
 
@@ -45,4 +47,4 @@ Updates are manual. The plugin pulls from the repository named in `update-source
 - Claude does not replace the engineer of record or the stamping engineer. All calcs and letters need PE review.
 - Content is internal to JMS. Don't distribute outside the company.
 
-Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.7.2.
+Author: Amr Banawan, Project Engineer, Bio-HANDLING. Version 0.7.3.

@@ -7,7 +7,7 @@ description: >
   "what changed in the plugin". It checks the plugin's GitHub repository and, only when
   asked to update, packages the new version for the user to install. It never runs on its own.
 metadata:
-  version: "0.5.0"
+  version: "0.7.3"
 ---
 
 # Plugin Update (manual, on request only)
@@ -44,9 +44,10 @@ If `repository` still reads `OWNER/jms-bio-plugins`, the source hasn't been conf
    ```
    Exit codes: 0 = update available, 3 = up to date (or the installed copy is newer: don't downgrade unless the user explicitly asks), 2 = error (report it).
 
-3. **Report** the installed version, the available version and the CHANGELOG entries in between. Put any **engineering rule changes** first (changed standards, tolerances, default options, procedure steps), so the user knows what will behave differently.
+3. **Report** the installed version, the available version and the changes in between. Lead with the plain-language summary from `WHATS-NEW.md` in the new version's plugin folder (the sections newer than the installed version), then the CHANGELOG entries for detail. Put any **engineering rule changes** first (changed standards, tolerances, default options, procedure steps), so the user knows what will behave differently.
 
 4. **Package (update requests only).** Re-run the script with `--package /mnt/user-data/outputs/bio-handling.plugin`, or another outputs location the session provides. The script validates the repository first and refuses to package if validation fails. Then deliver the file with SendUserFile and a one-line caption naming the new version. The user installs it from the file card, which replaces their current version.
+   - With the file card, repeat the `WHATS-NEW.md` summary in a few lines, so the person installing knows what changed.
    - Don't modify the installed plugin files directly; they are a read-only copy.
    - Don't push, commit or open pull requests to the repository from this skill.
 
@@ -54,5 +55,5 @@ If `repository` still reads `OWNER/jms-bio-plugins`, the source hasn't been conf
 
 ## Notes for the plugin owner
 
-- Releasing still follows the repository process: bump `version` in `plugin.json`, add a CHANGELOG entry, open a pull request, merge to `branch`. Users see the release the next time they ask for an update.
+- Releasing still follows the repository process: bump `version` in `plugin.json`, add a CHANGELOG entry, update `WHATS-NEW.md` in plain language, open a pull request, merge to `branch`. Users see the release the next time they ask for an update.
 - The repository is public, so users need no GitHub account to update. If it is ever made private, each user would need read access and GitHub connected to their Claude account.

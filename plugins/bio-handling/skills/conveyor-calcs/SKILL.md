@@ -8,7 +8,7 @@ description: >
   Bio-BELT or Bio-SCREW and wants the JMS calculation workbook completed through SEW gearmotor
   selection.
 metadata:
-  version: "0.5.0"
+  version: "0.7.3"
 ---
 
 # Conveyor Calculation Workflow (Bio-BELT and Bio-SCREW)
@@ -46,6 +46,7 @@ If the user supplies a newer template, use theirs. Run `scripts/inspect_template
 ## The workflow
 
 ### 1. Intake
+- **Project context first (`source-documents` step 2):** before asking for anything, search the user's Outlook email for the project number and name, the Equipment List PDFS library for every cut sheet, SharePoint, and Read.AI meeting transcripts if connected. If Read.AI isn't connected, tell the user once that Read.AI can be connected in Claude so its meeting transcripts and summaries can be used.
 - Ask for the document checklist via `source-documents`:
   - the equipment spec section **with all addenda**
   - the common motor section (e.g., 40 05 93)

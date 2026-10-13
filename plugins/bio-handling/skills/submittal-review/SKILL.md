@@ -7,7 +7,7 @@ description: >
   "draft Section 1", or shares an equipment specification (e.g., 41 12 13, 46 01 01, 14500, 41 52 19)
   or an engineer-of-record comment set for Bio-SCREW, Bio-BELT, Bio-HOPPER, Bio-SILO, gates or chutes.
 metadata:
-  version: "0.5.0"
+  version: "0.7.3"
 ---
 
 # Submittal and Spec Review
@@ -15,6 +15,8 @@ metadata:
 Review customer specifications and engineer-of-record (EoR) comments for JMS Bio-HANDLING equipment. Produce outputs the PE can put straight into the submittal. Load `jms-bio-conventions` for folders, naming and workflow owners.
 
 ## Establish context first
+
+**Project context first (`source-documents` step 2):** before asking for anything, search the user's Outlook email for the project number and name, the Equipment List PDFS library for every cut sheet, SharePoint, and Read.AI meeting transcripts if connected. If Read.AI isn't connected, tell the user once that Read.AI can be connected in Claude so its meeting transcripts and summaries can be used.
 
 Confirm or find:
 - project number, City/ST, contractor and EoR

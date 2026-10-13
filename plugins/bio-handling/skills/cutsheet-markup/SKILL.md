@@ -6,7 +6,7 @@ description: >
   "put together the component cut sheets or catalog cuts for this project", "which purchased parts does
   this spec need", or shares a project spec and calc sheets for submittal catalog cuts.
 metadata:
-  version: "0.7.1"
+  version: "0.7.3"
 ---
 
 # Submittal Cat Cuts: purchased-component selection and markup
@@ -37,6 +37,7 @@ Load with: `source-documents` (missing information), `submittal-review` (deviati
 
 ## Workflow
 1. **Intake.** The PE provides the project spec (with addenda), calc sheets and any other documents. Ask for the PE's username (markup author) and the equipment tags if they aren't in the documents.
+   **Project context first (`source-documents` step 2):** before asking for anything, search the user's Outlook email for the project number and name, the Equipment List PDFS library for every cut sheet, SharePoint, and Read.AI meeting transcripts if connected. If Read.AI isn't connected, tell the user once that Read.AI can be connected in Claude so its meeting transcripts and summaries can be used.
 2. **Read and list.** Read everything fully, including annotations and markups. Build the component list. For each item give:
    - source tag: *spec-required* / *calc-driven* / *JMS standard*
    - spec paragraph or calc cell
@@ -45,7 +46,7 @@ Load with: `source-documents` (missing information), `submittal-review` (deviati
    - library availability: file found (path) / missing
 
    Electrical area classification and control voltage usually decide switch and sensor models. If the documents don't state them, ask (`source-documents`); they are blocking for those items.
-3. **PE confirms the list** (add / remove / confirm). Right then, give the **missing data sheets list** (item, what's needed, likely source), so the PE can chase them while selections continue.
+3. **PE confirms the list** (add / remove / confirm). Right then, give the **missing data sheets list** (item, what's needed, likely source), so the PE can chase them while selections continue. **An item goes on that list only after searching the whole library (folder names, file names and text, including `Archive`) and the user's email (vendor quotes often carry the data sheet).** Say what was searched for each missing item.
 4. **Compliance table and selections.** For each item, find the library file and pick the compliant option.
    - Per requirement: requirement → spec paragraph → what the cut sheet offers (file, page) → compliant / deviation.
    - If nothing fully complies, pick the closest option and present the deviation with the alternatives.

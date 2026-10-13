@@ -4,6 +4,22 @@ Every change to `plugins/bio-handling/` must bump `version` in `plugins/bio-hand
 
 Format: `## <version> — <date> — <author>`, then what changed and why. Note any change to an engineering rule explicitly, so reviewers can see it.
 
+## 0.7.3 — 2026-10-13 — Amr Banawan
+- **Search before asking (rule change, all skills via `source-documents`).** Before asking the user for information, Claude searches, in order:
+  1. the conversation
+  2. the Equipment List PDFS library: folder names, file names and text, including `Archive` and the SEW reference folder
+  3. the user's own Outlook email for the project number and name, including attachments such as vendor quotes
+  4. SharePoint
+  5. Read.AI meeting transcripts, if connected
+
+  It cites what it finds and asks only for what's missing, saying what it searched.
+- **Never ask for a cut sheet without searching the library first.** The `cutsheet-markup` missing-data-sheets list now requires a library and email search per item.
+- **Read.AI notice:** if Read.AI isn't connected, Claude tells the user once per conversation that it can be connected so meeting transcripts can be used.
+- **Project-context step** added to the intake of `cutsheet-markup`, `om-manual`, `conveyor-calcs` and `submittal-review`.
+- **Fixed:** the `source-documents` example still said area classification decides whether SEW can be used (max Class I Div 2). It now matches the Oct 2026 decision: classification blocks the JMS switches and sensors, not the gearmotor selection.
+- **New `plugins/bio-handling/WHATS-NEW.md`:** a plain-language summary of recent changes that ships inside the plugin, and `plugin-update` shows it after packaging.
+- README: Read.AI is listed as an optional connector, plus "where Claude looks before asking".
+
 ## 0.7.2 — 2026-10-13 — Amr Banawan
 - **SEW reference data now ships with the plugin** for O&Ms, from ASB's library folder `SEW reference Information for O&M creation`.
 - **New `om-manual/references/sew-om-reference.md`,** extracted from SEW manual 27801357/EN, edition 02/2023:
